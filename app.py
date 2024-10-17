@@ -35,9 +35,7 @@ def generarqr():
     
         
     image_name = 'picture.png'
-    #img.save(f"./static/img/{image_name}.png")
-    #path = f"./static/img/{image_name}.png"
-    path = os.path.join("./static/img/", image_name + ".png")
+    path = os.path.join("./static/img/", image_name)
     img.save(path)
 
 
