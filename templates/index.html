@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Generador de QR</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>QR Code Generator</h1>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <div class="container">
+            <h2>Genera tu código QR</h2>
+            <p>Introduce la URL o texto que deseas convertir en un código QR.</p>
+            
+            <form action="/generarqr" method="post">
+                <input type="text" name="url" id="url" placeholder="https://example.com" required>
+                <button type="submit">Generar QR</button>
+            </form>
+            
+            <!-- Mostrar el código QR generado -->
+            {% if path %}
+                <div class="qr-container">
+                    <h3>Tu código QR:</h3>
+                    <img src="{{ path }}" alt="QR Code">
+                </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 QR Code Generator. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
